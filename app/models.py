@@ -3,6 +3,7 @@ from enum import Enum, IntEnum
 
 table_registry = registry()
 
+
 class StarRating(IntEnum):
     um = 1
     dois = 2
@@ -10,17 +11,19 @@ class StarRating(IntEnum):
     quatro = 4
     cinco = 5
 
+
 class SubjectsEnum(str, Enum):
-    biologia = 'biologia'
-    quimica = 'quimica'
-    fisica = 'física'
-    matematica = 'matemática'
-    historia = 'historia'
-    geografia = 'geografia'
-    sociologia = 'sociologia'
-    filosofia = 'filosofia'
-    linguagens = 'linguagens'
-    literatura = 'literatura'
+    biologia = "biologia"
+    quimica = "quimica"
+    fisica = "física"
+    matematica = "matemática"
+    historia = "historia"
+    geografia = "geografia"
+    sociologia = "sociologia"
+    filosofia = "filosofia"
+    linguagens = "linguagens"
+    literatura = "literatura"
+
 
 @table_registry.mapped_as_dataclass
 class Subject:
