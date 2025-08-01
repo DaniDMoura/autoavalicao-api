@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from http import HTTPStatus
+from fastapi.responses import JSONResponse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -25,6 +26,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.get("/health", status_code=HTTPStatus.OK)
+async def health_check():
+    return JSONResponse(content={"status": "ok"})
 
 
 @app.get("/autoavalaiacao/", status_code=HTTPStatus.OK, response_model=ListSubjects)
