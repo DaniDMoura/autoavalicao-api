@@ -37,7 +37,7 @@ class FilterPage(BaseModel):
 
 class FilterTodo(BaseModel):
     name: Optional[str] = None
-    subject: Optional[SubjectsEnum] = None
+    subject: Optional[List[SubjectsEnum]] = None
     stars: Optional[StarRating] = None
 
 

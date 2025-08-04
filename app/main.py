@@ -45,7 +45,7 @@ async def list_subjects(
         query = query.filter(Subject.name.ilike(f"%{filter.name}%"))
 
     if filter.subject:
-        query = query.filter(Subject.subject_type == filter.subject)
+        query = query.filter(Subject.subject_type.in_(filter.subject))
 
     if filter.stars:
         query = query.filter(Subject.stars == filter.stars)
